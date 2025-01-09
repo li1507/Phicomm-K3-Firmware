@@ -1,22 +1,21 @@
 #!/bin/bash
-
-echo 'ĞŞ¸Ä IP'
+echo 'ä¿®æ”¹ IP'
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
-echo 'ĞŞ¸ÄÖ÷»úÃû'
+echo 'ä¿®æ”¹ä¸»æœºå'
 sed -i "s/hostname='OpenWrt'/hostname='Router'/g" package/base-files/files/bin/config_generate
 cat package/base-files/files/bin/config_generate |grep hostname=
 
-echo 'ÒÆ³ıÖ÷Ò³ÅÜ·ÖĞÅÏ¢ÏÔÊ¾'
+echo 'ç§»é™¤ä¸»é¡µè·‘åˆ†ä¿¡æ¯æ˜¾ç¤º'
 sed -i 's/ <%=luci.sys.exec("cat \/etc\/bench.log") or ""%>//g' package/lean/autocore/files/arm/index.htm
 
-echo 'ÒÆ³ıÖ÷Ò³ÈÕÖ¾´òÓ¡'
+echo 'ç§»é™¤ä¸»é¡µæ—¥å¿—æ‰“å°'
 sed -i '/console.log(mainNodeName);/d' package/lean/luci-theme-argon/htdocs/luci-static/argon/js/script.js
 
-echo 'ĞŞ¸Äupnp°ó¶¨ÎÄ¼şÎ»ÖÃ'
+echo 'ä¿®æ”¹upnpç»‘å®šæ–‡ä»¶ä½ç½®'
 sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
 cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
 
-echo 'Ìí¼ÓÖ÷Ò³µÄCPUÎÂ¶ÈÏÔÊ¾'
+echo 'æ·»åŠ ä¸»é¡µçš„CPUæ¸©åº¦æ˜¾ç¤º'
 sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"sed 's/../&./g' /sys/class/thermal/thermal_zone0/temp|cut -c1-4\")%></td></tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm |grep Temperature
