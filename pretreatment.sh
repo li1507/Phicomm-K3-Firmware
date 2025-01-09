@@ -1,30 +1,29 @@
 #!/bin/bash
-
-echo 'Ìí¼ÓSSR-PlusÈí¼şÔ´'
+echo 'æ·»åŠ SSR-Plusè½¯ä»¶æº'
 sed -i "/helloworld/d" "feeds.conf.default"
 echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
-echo '========= SSR-Plus ¼ÓÔØÍê³É£¡ ========='
+echo '========= SSR-Plus åŠ è½½å®Œæˆï¼ ========='
 
-echo 'Ìí¼ÓPasswallÈí¼şÔ´'
+echo 'æ·»åŠ Passwallè½¯ä»¶æº'
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-echo '========= Passwall ¼ÓÔØÍê³É£¡ ========='
+echo '========= Passwall åŠ è½½å®Œæˆï¼ ========='
 
-echo 'Ìí¼ÓAdguardHomeÈí¼şÔ´'
+echo 'æ·»åŠ AdguardHomeè½¯ä»¶æº'
 git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
-echo '========= AdguardHome ¼ÓÔØÍê³É£¡ ========='
+echo '========= AdguardHome åŠ è½½å®Œæˆï¼ ========='
 
-echo 'Ìí¼Ólwz322µÄK3ÆÁÄ»²å¼ş'
+echo 'æ·»åŠ lwz322çš„K3å±å¹•æ’ä»¶'
 rm -rf package/lean/luci-app-k3screenctrl
 git clone https://github.com/li1507/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
-echo '========= K3ÆÁÄ»²å¼ş ¼ÓÔØÍê³É£¡ ========='
+echo '========= K3å±å¹•æ’ä»¶ åŠ è½½å®Œæˆï¼ ========='
 
-echo 'Ìæ»»lwz322µÄK3ÆÁÄ»Çı¶¯²å¼ş'
+echo 'æ›¿æ¢lwz322çš„K3å±å¹•é©±åŠ¨æ’ä»¶'
 rm -rf package/lean/k3screenctrl
 git clone https://github.com/li1507/k3screenctrl_build.git package/lean/k3screenctrl/
-echo '========= K3ÆÁÄ»Çı¶¯²å¼ş ¼ÓÔØÍê³É£¡ ========='
+echo '========= K3å±å¹•é©±åŠ¨æ’ä»¶ åŠ è½½å®Œæˆï¼ ========='
 
-# echo 'Ìí¼ÓOpenClash'
+# echo 'æ·»åŠ OpenClash'
 # rm -rf package/lean/luci-app-openclash
 # mkdir package/luci-app-openclash
 # cd package/luci-app-openclash
@@ -34,22 +33,22 @@ echo '========= K3ÆÁÄ»Çı¶¯²å¼ş ¼ÓÔØÍê³É£¡ ========='
 # echo "luci-app-openclash" >> .git/info/sparse-checkout
 # git pull --depth 1 origin master
 # git branch --set-upstream-to=origin/master master
-# echo '========= OpenClash ¼ÓÔØÍê³É£¡ ========='
+# echo '========= OpenClash åŠ è½½å®Œæˆï¼ ========='
 
-# echo 'Ìí¼ÓHaiiboÈí¼şÔ´'
+# echo 'æ·»åŠ Haiiboè½¯ä»¶æº'
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
-# echo '========= HaiiboÈí¼şÔ´ ¼ÓÔØÍê³É£¡ ========='
+# echo '========= Haiiboè½¯ä»¶æº åŠ è½½å®Œæˆï¼ ========='
 
-# echo 'Ìí¼Ókenzok8 openwrt-package'
+# echo 'æ·»åŠ kenzok8 openwrt-package'
 # sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 # sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
-# echo '========= kenzok8Èí¼şÔ´ ¼ÓÔØÍê³É£¡ ========='
+# echo '========= kenzok8è½¯ä»¶æº åŠ è½½å®Œæˆï¼ ========='
 
-# echo 'Ìí¼Ókenzok8 small-package'
+# echo 'æ·»åŠ kenzok8 small-package'
 # sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
-# echo '========= kenzok8Èí¼şÔ´ ¼ÓÔØÍê³É£¡ ========='
+# echo '========= kenzok8è½¯ä»¶æº åŠ è½½å®Œæˆï¼ ========='
 
-# echo 'Ìí¼ÓMosDNS'
+# echo 'æ·»åŠ MosDNS'
 # rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/haiibo/luci-app-mosdns
 # rm -rf feeds/haiibo/mosdns
@@ -59,16 +58,16 @@ echo '========= K3ÆÁÄ»Çı¶¯²å¼ş ¼ÓÔØÍê³É£¡ ========='
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-# echo '========= MosDNS ¼ÓÔØÍê³É£¡ ========='
+# echo '========= MosDNS åŠ è½½å®Œæˆï¼ ========='
 
-echo 'ÒÆ³ıbcm53xxÖĞµÄÆäËû»úĞÍ'
+echo 'ç§»é™¤bcm53xxä¸­çš„å…¶ä»–æœºå‹'
 sed -i '421,453d' target/linux/bcm53xx/image/Makefile
 sed -i '140,412d' target/linux/bcm53xx/image/Makefile
 sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bcm53xx/image/Makefile
-echo '========= ÒÆ³ıbcm53xxÖĞµÄÆäËû»úĞÍÍê³É£¡ ========='
+echo '========= ç§»é™¤bcm53xxä¸­çš„å…¶ä»–æœºå‹å®Œæˆï¼ ========='
 
 # 1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
 firmware='69027'
-echo 'Ìæ»»ÎŞÏßÇı¶¯'
+echo 'æ›¿æ¢æ— çº¿é©±åŠ¨'
 wget -nv https://github.com/li1507/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-echo '========= Ìæ»»ÎŞÏßÇı¶¯Ìæ»»Íê³É£¡ ========='
+echo '========= æ›¿æ¢æ— çº¿é©±åŠ¨æ›¿æ¢å®Œæˆï¼ ========='
