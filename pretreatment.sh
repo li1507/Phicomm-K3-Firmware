@@ -5,10 +5,10 @@
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 # echo '========= SSR-Plus 加载完成！ ========='
 
-# echo '添加Passwall软件源'
-# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-# echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-# echo '========= Passwall 加载完成！ ========='
+echo '添加Passwall软件源'
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+echo '========= Passwall 加载完成！ ========='
 
 # echo '添加AdguardHome软件源'
 # git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
