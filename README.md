@@ -7,6 +7,4 @@ Passwall
 
 MosDNS
 
-KMS
-
 UPnP
