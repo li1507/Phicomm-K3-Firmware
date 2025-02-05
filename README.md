@@ -5,7 +5,7 @@ AdguardHome
 
 Passwall
 
-MosDNS v5.3.3
+MosDNS
 
 KMS
 
