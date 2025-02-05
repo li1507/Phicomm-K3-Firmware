@@ -10,9 +10,9 @@ echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.co
 echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 echo '========= Passwall 加载完成！ ========='
 
-# echo '添加AdguardHome软件源'
-# git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
-# echo '========= AdguardHome 加载完成！ ========='
+echo '添加AdguardHome软件源'
+git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
+echo '========= AdguardHome 加载完成！ ========='
 
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl
