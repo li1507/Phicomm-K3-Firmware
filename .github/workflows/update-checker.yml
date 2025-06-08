@@ -1,3 +1,10 @@
+#
+# Copyright (c) 2020-2025 li1507 <https://github.com/li1507>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+
 name: Update Checker
 
 env:
