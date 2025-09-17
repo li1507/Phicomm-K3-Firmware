@@ -10,10 +10,15 @@ rm -rf package/lean/k3screenctrl
 git clone https://github.com/li1507/k3screenctrl_build.git package/lean/k3screenctrl/
 echo '========= K3屏幕驱动插件 加载完成！ ========='
 
-echo '添加passwall软件源'
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-echo '=========添加passwall软件源 OK!========='
+#echo '添加passwall软件源'
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+#echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+#echo '=========添加passwall软件源 OK!========='
+
+echo '添加 kenzok8 small-package 软件源'
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+echo '========= kenzok8 small-package 加载完成！ ========='
 
 echo '移除bcm53xx中的其他机型'
 sed -i '421,453d' target/linux/bcm53xx/image/Makefile
