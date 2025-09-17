@@ -10,11 +10,22 @@ rm -rf package/lean/k3screenctrl
 git clone https://github.com/li1507/k3screenctrl_build.git package/lean/k3screenctrl/
 echo '========= K3屏幕驱动插件 加载完成！ ========='
 
-#echo '添加kenzok8 small-package'
-#sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
-# rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
-#echo '========= kenzok8软件源 加载完成！ ========='
+echo '添加kenzok8 small-package'
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+echo '========= kenzok8软件源 加载完成！ ========='
 
+echo '添加kenzok8 small'
+sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+./scripts/feeds install -a 
+make menuconfig
+echo '========= kenzok8 small 加载完成！ ========='
 # echo '移除bcm53xx中的其他机型'
 # sed -i '421,453d' target/linux/bcm53xx/image/Makefile
 # sed -i '140,412d' target/linux/bcm53xx/image/Makefile
